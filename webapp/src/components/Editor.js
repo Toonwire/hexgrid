@@ -31,6 +31,7 @@ function Editor(props) {
       highlightActiveLine={true}
       value={editorCode}
       setOptions={{
+        useWorker: false,
         showLineNumbers: true,
         tabSize: 4,
       }}
