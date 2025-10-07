@@ -69,8 +69,5 @@ const Constants = {
   ],
 };
 
-module.exports = {
-  generateGUID,
-  shuffleArray,
-  Constants,
-};
+
+export { generateGUID, shuffleArray, Constants };

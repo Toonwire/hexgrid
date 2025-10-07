@@ -66,4 +66,4 @@ class Cube {
   }
 }
 
-module.exports = Cube;
+export default Cube;

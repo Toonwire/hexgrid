@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Editor.css';
-import WithSidebar from './Sidebar';
+import WithSidebar from './Sidebar.jsx';
 import { Redirect } from 'react-router-dom';
 import Constants from '../constants.js';
 

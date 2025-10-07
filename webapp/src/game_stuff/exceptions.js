@@ -10,12 +10,12 @@ class CustomError extends Error {
   }
 }
 
-export class TooManyPlayersException extends CustomError {}
-export class TransactionError extends CustomError {
+class TooManyPlayersException extends CustomError {}
+class TransactionError extends CustomError {
   constructor(message, transaction) {
     super(message);
     this.transaction = transaction;
   }
 }
 
-export default { TooManyPlayersException, TransactionError };
+export { TooManyPlayersException, TransactionError };

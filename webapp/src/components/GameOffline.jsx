@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Game.css';
-import WithSidebar from './Sidebar';
+import WithSidebar from './Sidebar.jsx';
 import { withRouter } from 'react-router';
 
 import Constants from '../constants.js';
 import Scoreboard from './Scoreboard';
-import { default as HexgridComponent } from './Hexgrid';
-import Loader from './Loader';
-import utils from '../game_stuff/utils';
+import { default as HexgridComponent } from './Hexgrid.jsx';
+import Loader from './Loader.jsx';
 import Game from '../game_stuff/game';
-import Modal from './Modal';
+import Modal from './Modal.jsx';
+import { generateGUID } from '../game_stuff/utils';
 
 import { TooManyPlayersException } from '../game_stuff/exceptions';
 
@@ -59,7 +59,7 @@ function GameOffline(props) {
     if (props.location.state && props.location.state.playerCodes) {
       props.location.state.playerCodes.forEach((player) => {
         try {
-          game.addPlayer(utils.generateGUID(), player.name, player.codeString);
+          game.addPlayer(generateGUID(), player.name, player.codeString);
         } catch (e) {
           if (e instanceof TooManyPlayersException) {
             console.log('Too many players - cannot add more players to game');

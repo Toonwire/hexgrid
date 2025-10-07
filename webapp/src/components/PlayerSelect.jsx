@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/PlayerSelect.css';
-import WithSidebar from './Sidebar';
+import WithSidebar from './Sidebar.jsx';
 import { withRouter } from 'react-router';
 import { Redirect } from 'react-router-dom';
 

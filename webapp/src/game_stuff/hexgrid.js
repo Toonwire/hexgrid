@@ -1,8 +1,8 @@
-const Cube = require('./cube');
-const Hexagon = require('./hexagon');
-const utils = require('./utils');
+import Cube from './cube';
+import Hexagon from './hexagon';
+import { Constants, shuffleArray } from './utils';
 
-const { TransactionError } = require('./exceptions');
+import { TransactionError } from './exceptions';
 
 const NeighborWraparound = {
   NONE: 0,
@@ -151,7 +151,7 @@ class Hexgrid {
 
         // assign the neighbor hexagons resources equal to the mining field
         // shuffle mining field for each player
-        utils.shuffleArray(miningField);
+        shuffleArray(miningField);
 
         playerHexagon.neighbors.forEach((hexId, index) => {
           this.hexagonIdDict[hexId].resources = miningField[index];
@@ -195,7 +195,7 @@ class Hexgrid {
         toHexagon.resources *= -1; // to get back to positive
         toHexagon.ownerId = playerId;
       } else if (toHexagon.resources === 0) {
-        toHexagon.ownerId = utils.Constants.HexOwner.NONE; // no one owns the hexagon
+        toHexagon.ownerId = Constants.HexOwner.NONE; // no one owns the hexagon
       }
     }
   }
@@ -262,7 +262,7 @@ class Hexgrid {
 
   growPlayerCells() {
     this.hexagons.forEach((hexagon) => {
-      if (hexagon.ownerId !== utils.Constants.HexOwner.NONE && hexagon.resources < hexagon.maxGrowth) {
+      if (hexagon.ownerId !== Constants.HexOwner.NONE && hexagon.resources < hexagon.maxGrowth) {
         hexagon.resources++;
       }
     });
@@ -280,9 +280,9 @@ class Hexgrid {
         hexagon.neighbors.forEach((hexId) => {
           let neighborHex = this.hexagonIdDict[hexId];
 
-          let hexOwner = utils.Constants.HexOwner.NONE;
-          if (neighborHex.ownerId === playerId) hexOwner = utils.Constants.HexOwner.OWN;
-          else if (neighborHex.ownerId !== utils.Constants.HexOwner.NONE) hexOwner = utils.Constants.HexOwner.OTHER;
+          let hexOwner = Constants.HexOwner.NONE;
+          if (neighborHex.ownerId === playerId) hexOwner = Constants.HexOwner.OWN;
+          else if (neighborHex.ownerId !== Constants.HexOwner.NONE) hexOwner = Constants.HexOwner.OTHER;
 
           neighborCells.push({
             id: neighborHex.id,

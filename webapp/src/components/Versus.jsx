@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import '../styles/Versus.css';
-import WithSidebar from './Sidebar';
+import WithSidebar from './Sidebar.jsx';
 import { withRouter } from 'react-router';
 import { Redirect } from 'react-router-dom';
 
 import Constants from '../constants.js';
 
-import AggressiveBot from '../stored_algorithms/algos/AggressiveBot';
-import MediumBot from '../stored_algorithms/algos/MediumBot';
-import DefaultBot from '../stored_algorithms/algos/DefaultBot';
-import EasyBot from '../stored_algorithms/algos/EasyBot';
-import twSupply from '../stored_algorithms/algos/twSupply';
-import MakeItSafe from '../stored_algorithms/algos/MakeItSafe';
+import AggressiveBot from '../stored_algorithms/algos/AggressiveBot.js';
+import MediumBot from '../stored_algorithms/algos/MediumBot.js';
+import DefaultBot from '../stored_algorithms/algos/DefaultBot.js';
+import EasyBot from '../stored_algorithms/algos/EasyBot.js';
+import twSupply from '../stored_algorithms/algos/twSupply.js';
+import MakeItSafe from '../stored_algorithms/algos/MakeItSafe.js';
 
 function getActivePlayers(availablePlayers) {
   var players = [];

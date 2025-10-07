@@ -11,7 +11,6 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import PlayerSelect from './PlayerSelect';
 
 function App() {
-  // const [msg, setMsg] = useState("msg");
 
   return (
     <Router>

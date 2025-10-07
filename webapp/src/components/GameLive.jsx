@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Game.css';
-import WithSidebar from './Sidebar';
+import WithSidebar from './Sidebar.jsx';
 import { withRouter } from 'react-router';
 
 import Constants from '../constants.js';
 import Scoreboard from './Scoreboard';
-import Hexgrid from './Hexgrid';
-import Loader from './Loader';
-import Modal from './Modal';
+import Hexgrid from './Hexgrid.jsx';
+import Loader from './Loader.jsx';
+import Modal from './Modal.jsx';
 import socketAPI from '../socket_api';
 
 function GameLive(props) {
